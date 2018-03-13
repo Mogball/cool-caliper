@@ -3,7 +3,7 @@
 #define __NARG__(...) __NARG_I_(__VA_ARGS__,__RSEQ_N())
 #define __NARG_I_(...) __ARG_N(__VA_ARGS__)
 #define __ARG_N(_1, _2, _3, _4, _5, _6, _7, _8, N, ...) N
-#define __RSEQ_N() 8, 7, 6, 5, 4, 3, 2, 1, 0
+#define __RSEQ_N() 6, 5, 4, 3, 2, 1, 0
 #define _VFUNC_(name, n) name##n
 #define _VFUNC(name, n) _VFUNC_(name, n)
 #define VFUNC(func, ...) _VFUNC(func, __NARG__(__VA_ARGS__)) (__VA_ARGS__)
@@ -16,14 +16,7 @@
   is_one_of3(x, a, b) || x == c
 #define is_one_of5(x, a, b, c, d) \
   is_one_of4(x, a, b, c) || x == d
-#define is_one_of6(x, a, b, c, d, e) \
-  is_one_of5(x, a, b, c, d) || x == e
-#define is_one_of7(x, a, b, c, d, e, f) \
-  is_one_of6(x, a, b, c, d, e) || x == f
-#define is_one_of8(x, a, b, c, d, e, f, g) \
-  is_one_of7(x, a, b, c, d, e, f) || x == g
-#define is_one_of9(x, a, b, c, d, e, f, g, h) \
-  is_one_of8(x, a, b, c, d, e, f, g) || x == h
+
 #define isnt_any_of2(x, a) \
   x != a
 #define isnt_any_of3(x, a, b) \
@@ -46,6 +39,7 @@
 
 // LED Pins: 53 down to 46
 // Digit Pins: 25, 24, 23, 22
+// Lefmost digit to rightmost
 #define _g_ 47
 #define _f_ 48
 #define _e_ 49
