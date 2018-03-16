@@ -6,6 +6,8 @@
 SegmentDisplay display;
 Encoder encoder;
 
+double calibration = 0.258754;
+
 void setup() {
     RTT::begin();
     display.begin();
@@ -13,4 +15,7 @@ void setup() {
 }
 
 void loop() {
+    int pos = encoder.get_pos();
+    double len = pos * calibration;
+    display.write_double(len);
 }

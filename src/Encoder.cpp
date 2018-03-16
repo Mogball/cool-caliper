@@ -1,5 +1,10 @@
 #include "Encoder.h"
 
+Encoder::Encoder() :
+    pos(0),
+    pin_A(this, EncoderPin::A),
+    pin_B(this, EncoderPin::B) {}
+
 void Encoder::channel_interrupt(EncoderPin::Channel channel) {
     if (channel == EncoderPin::A) {
         if (pin_A.read() == !pin_B.read()) { ccw(); }

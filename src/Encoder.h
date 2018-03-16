@@ -29,6 +29,8 @@ class Encoder {
     void reset_interrupt();
 
 public:
+    Encoder();
+
     int get_pos() const;
 
     void begin();

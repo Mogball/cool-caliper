@@ -6,14 +6,16 @@
 class Encoder;
 
 class EncoderPin : public PinChangeInterrupt {
-    Encoder *m_encoder;
-    Channel m_channel;
-
 public:
     enum Channel {
         A, B
     };
 
+private:
+    Encoder *m_encoder;
+    Channel m_channel;
+
+public:
     EncoderPin(Encoder *encoder, Channel channel);
 
     void on_interrupt(uint16_t arg) override;

@@ -1,4 +1,4 @@
-#include "ResetPin.h
+#include "ResetPin.h"
 #include "Encoder.h"
 
 ResetPin::ResetPin() :
