@@ -1,15 +1,16 @@
-#include "Cosa/RTT.hh"
-#include "Cosa/OutputPin.hh"
+#include <Cosa/RTT.hh>
 
-OutputPin ledPin(Board::LED);
+#include "Encoder.h"
+#include "SegmentDisplay.h"
+
+SegmentDisplay display;
+Encoder encoder;
 
 void setup() {
     RTT::begin();
+    display.begin();
+    encoder.begin();
 }
 
 void loop() {
-    ledPin.on();
-    delay(50);
-    ledPin.off();
-    delay(500);
 }
